@@ -1,0 +1,12 @@
+<h3 app-align="center">Hero List</h3>
+<ul class="heroes-list">
+  <li ng-repeat="hero in $ctrl.heroes" class="heroes-list__item">
+    <hero-details
+        hero="hero"
+        on-delete="$ctrl.deleteHero(hero)"
+        on-update="$ctrl.updateHero(hero,prop,value)"
+    >
+    </hero-details>
+  </li>
+</ul>
+

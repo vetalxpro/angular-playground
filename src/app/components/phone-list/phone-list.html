@@ -1,0 +1,32 @@
+<md-content flex layout="column" layout-padding>
+  <md-input-container>
+    <label>Search</label>
+    <input ng-model="$ctrl.query">
+  </md-input-container>
+  <md-input-container>
+    <label>Filter</label>
+    <md-select ng-model="$ctrl.orderProp">
+      <md-option value="name">Name</md-option>
+      <md-option value="age">Age</md-option>
+    </md-select>
+  </md-input-container>
+
+  <div flex layout="row" layout-align="center stretch" layout-wrap>
+    <md-card ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+             class="card">
+      <img ng-src="{{phone.imageUrl}}" class="md-card-image" alt="{{ phone.name }}">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{ phone.name }}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>{{ phone.snippet }}</p>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-raised md-primary" ui-sref="phoneDetails({phoneId: phone.id})">View</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
+  <p>Total number of phones: {{ $ctrl.phones.length }}</p>
+</md-content>

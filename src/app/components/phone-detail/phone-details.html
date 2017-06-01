@@ -1,0 +1,51 @@
+<div ng-class="$ctrl.styles.container">
+  <div flex ng-class="$ctrl.styles.content">
+    <md-toolbar layout="row" class="md-hue-3">
+      <div class="md-toolbar-tools">
+        <h1>{{ $ctrl.phoneDetails.name }}</h1>
+      </div>
+    </md-toolbar>
+    <div flex layout="row" layout-padding>
+      <div>
+        <img
+            class="phone"
+            ng-src="{{ $ctrl.mainImageUrl }}"
+            alt="{{ $ctrl.phoneDetails.name }}">
+      </div>
+      <div>
+        <p>{{ $ctrl.phoneDetails.description }}</p>
+        <ul flex layout="row" layout-wrap layout-padding>
+          <li class="thumb-item"
+              ng-repeat="img in $ctrl.phoneDetails.images">
+            <img ng-src="{{img}}"
+                 class="thumb-pic"
+                 ng-click="$ctrl.setImage(img)"/>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul layout-padding>
+      <li>
+        <span>Availability and Networks</span>
+        <dl>
+          <dt>Availability</dt>
+          <dd ng-repeat="availability in $ctrl.phoneDetails.availability">{{availability}}</dd>
+        </dl>
+      </li>
+      <li>
+        <span>Connectivity</span>
+        <dl>
+          <dt>Infrared</dt>
+          <dd>{{$ctrl.phoneDetails.connectivity.infrared | checkmark}}</dd>
+          <dt>GPS</dt>
+          <dd>{{$ctrl.phoneDetails.connectivity.gps | checkmark}}</dd>
+        </dl>
+      </li>
+      <li>
+        <span>Additional Features</span>
+        <dd>{{$ctrl.phoneDetails.additionalFeatures}}</dd>
+      </li>
+    </ul>
+  </div>
+  <md-button ui-sref="phones" class="md-raised md-primary">Back</md-button>
+</div>

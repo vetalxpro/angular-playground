@@ -1,0 +1,14 @@
+app-developer {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    color: blue;
+  }
+  a.active {
+    color: red;
+  }
+  ui-view{
+    margin-left: 50px;
+    padding-top: 50px;
+  }
+}

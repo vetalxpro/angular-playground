@@ -1,0 +1,22 @@
+<div>
+  <span>Name:</span>
+  <hero-editable-field
+      field-value="$ctrl.hero.name"
+      field-type="text"
+      on-update="$ctrl.update('name',value)"
+  ></hero-editable-field>
+</div>
+<div>
+  <span>Location:</span>
+  <hero-editable-field
+      field-value="$ctrl.hero.location"
+      field-type="text"
+      on-update="$ctrl.update('location',value)"
+  ></hero-editable-field>
+</div>
+<button
+    type="button"
+    ng-click="$ctrl.delete()"
+>Delete
+</button>
+<hr>

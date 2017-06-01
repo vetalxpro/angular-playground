@@ -1,0 +1,14 @@
+<heroes-list
+    heroes="$ctrl.heroes"
+></heroes-list>
+<button
+    type="button"
+    ng-click="$ctrl.enableAddMode()"
+> Add Hero
+</button>
+<hero-add-form
+    ng-if="$ctrl.isAddMode"
+    on-add="$ctrl.addHero(name,location)"
+    on-cancel="$ctrl.cancelAdd()"
+></hero-add-form>
+

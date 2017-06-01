@@ -1,0 +1,32 @@
+phone-list{
+  .card {
+    max-width: 300px;
+
+    &.ng-enter,
+    &.ng-leave,
+    &.ng-move {
+      transition: 0.5s;
+    }
+    &.ng-enter,
+    &.ng-move {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    &.ng-enter.ng-enter-active,
+    &.ng-move.ng-move-active {
+      height: auto;
+      opacity: 1;
+    }
+    &.ng-leave {
+      opacity: 1;
+      overflow: hidden;
+    }
+    &.ng-leave.ng-leave-active {
+      height: 0;
+      opacity: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
